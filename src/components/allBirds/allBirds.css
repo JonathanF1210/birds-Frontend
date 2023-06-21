@@ -35,6 +35,13 @@ body{
 	color: #555;
 	font-size: 16px;
   }
+
+  .birds-container input {
+	margin-bottom: 30px;
+	width: 75%;
+	height: 25px;
+	text-align: center;
+  }
   
   #sName{
 	margin-top: 5px;
