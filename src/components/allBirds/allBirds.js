@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-
 import './allBirds.css';
 
 const AllBirds = () => {
@@ -31,6 +30,12 @@ const AllBirds = () => {
     bird.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  const handleBirdDataToLocalStorage = (bird) => {
+    var birdList = JSON.parse(window.localStorage.getItem("birdList")) || []; //gets birdList from local storage and initializes it to var birdList or initializes and empty array
+    birdList.push(bird); //addes bird object to array
+    window.localStorage.setItem("birdList", JSON.stringify(birdList)); //sets newList in localStorage
+}
+
   return (
     <div className="birds-container">
       <h1>All Birds</h1>
@@ -49,6 +54,7 @@ const AllBirds = () => {
           <br />
           <img src={bird.images} alt={bird.name} />
           <p>{bird.description}</p>
+          <button id="theBird" onClick={() => handleBirdDataToLocalStorage(bird)}>Click to Add to watchList</button>
         </div>
       ))}
     </div>
@@ -56,5 +62,3 @@ const AllBirds = () => {
 };
 
 export default AllBirds;
-
-

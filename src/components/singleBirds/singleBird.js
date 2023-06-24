@@ -36,8 +36,6 @@ const SingleBird = () => {
 	  <p><strong>Distribution: </strong>{bird.distribution}</p>
 	  <p><strong>Breeding Season: </strong>{bird.breedingSeason}</p>
 	  <p><strong>Countries Found: </strong>{bird.countriesFound}</p>
-	
-      {/* Render other details of the bird */}
     </div>
   );
 };
