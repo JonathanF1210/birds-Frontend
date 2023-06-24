@@ -14,11 +14,9 @@ Bird View is a web application that allows users to explore a collection of bird
 Bird View is still under development, and the following features and improvements are planned:
 
 - Design and implement a landing page.
-- Create a database bird object form page for users to submit more bird data.
+- Create form page for users to submit more bird data.
 - Enhance the user interface and user experience.
-- Add user authentication and user-specific features.
 - Implement additional pages for bird-related information and resources.
-- Integrate with external APIs to provide more bird data and functionalities.
 
 ## Contributing
 
