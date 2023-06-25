@@ -1,0 +1,69 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+form {
+  border: solid 3px black;
+  border-radius: 5px;
+  padding: 40px 30px 20px 20px;
+  text-align: center;
+  background-color: lightblue;
+  margin: 5px 100px 5px 100px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  padding-right: 5px;
+  font-size: 22px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: right;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+  width: 50%;
+  height: 20px;
+  padding: 5px;
+  margin-bottom: 10px;
+  background-color: lightgray;
+}
+
+input[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: 5px;
+  margin-bottom: 50px;
+  width: 100px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  margin-bottom: 25px;
+  width: 650px;
+}
+
+.form-row label {
+  flex-basis: 200px;
+  margin-right: 10px;
+}
+
+.form-row input,
+.form-row textarea {
+  flex-grow: 1;
+}
+
+.submit-row {
+  margin-top: 20px;
+}

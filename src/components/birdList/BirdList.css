@@ -1,33 +1,33 @@
 .birds-container {
-	padding: 20px;
-  }
-  
-  .birds-container h1 {
-	margin-bottom: 20px;
-	font-size: 36px;
-  }
-  
-  .birds-container .bird-card {
-	margin-bottom: 50px;
-	padding: 20px;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	background-color: #f2f5f7;
-  }
-  
-  .birds-container {
-	display: block;
-	font-weight: bold;
-	font-size: 24px;
-  }
-  
-  .birds-container .bird-card img {
-	margin: 10px 0;
-	max-width: 100%;
-	height: auto;
-  }
-  
-  .birds-container .bird-card p {
-	color: #555;
-	font-size: 16px;
-  }
+  padding: 20px;
+}
+
+.birds-container h1 {
+  margin-bottom: 20px;
+  font-size: 36px;
+}
+
+.birds-container .bird-card {
+  margin-bottom: 50px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f2f5f7;
+}
+
+.birds-container {
+  display: block;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.birds-container .bird-card img {
+  margin: 10px 0;
+  max-width: 100%;
+  height: auto;
+}
+
+.birds-container .bird-card p {
+  color: #555;
+  font-size: 16px;
+}
