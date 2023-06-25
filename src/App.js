@@ -4,12 +4,14 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import AllBirds from './components/allBirds/allBirds';
 import SingleBird from './components/singleBirds/singleBird';
 import BirdList from './components/birdList/BirdList';
+import LandingPage from './components/landingPage/LandingPage';
 
 function App() {
   return (
     <div className="App">
       <Router>
         <Routes>
+          <Route path="/" element={<LandingPage />} />
           <Route path="/allBirds" element={<AllBirds />} />
           <Route path="/bird/:name" element={<SingleBird />} />
           <Route path="/birdlist" element={<BirdList />} />
