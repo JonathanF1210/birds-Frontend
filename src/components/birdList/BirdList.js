@@ -14,14 +14,14 @@ const BirdList = () => {
   }, []);
 
   return (
-    <div className="birds-container">
+    <div>
       <nav className="navPages">
         <Link to="/allBirds" className="nav-link">
           All Birds
         </Link>
 
-        <Link to="/birdlist" className="nav-link">
-          Watch List
+        <Link to="/" className="nav-link">
+          Home
         </Link>
 
         <Link to="/dataform" className="nav-link">
@@ -29,21 +29,22 @@ const BirdList = () => {
         </Link>
       </nav>
       <h1>Bird List</h1>
+      <div className="birds-container-watchlist">
       {birdList.length === 0 ? (
         <p>No birds found in the list.</p>
       ) : (
         birdList.map((bird) => (
-          <div key={bird.id} className="bird-card">
-            <Link to={`/bird/${bird.name}`}>
+          <div key={bird.id} className="bird-card-watchlist">
+            <Link to={`/bird/${bird.name}`} className="nav-link body-link">
               <strong>{bird.name}</strong>
-            </Link>
             <p>{bird.scientificName}</p>
+            </Link>
             <br />
             <img src={bird.images} alt={bird.name} />
-            <p>{bird.description}</p>
           </div>
         ))
       )}
+    </div>
     </div>
   );
 };

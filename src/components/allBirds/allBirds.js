@@ -37,22 +37,26 @@ const AllBirds = () => {
   };
 
   return (
-    <div className="birds-container">
-      <nav className="navPages">
-        <Link to="/allBirds" className="nav-link">
-          All Birds
+    <div>
+      <header>
+      <nav className="navPages-allbirds">
+        <Link to="/" className="nav-link hoverable">
+          Home
         </Link>
 
-        <Link to="/birdlist" className="nav-link">
+        <Link to="/birdlist" className="nav-link hoverable">
           Watch List
         </Link>
 
-        <Link to="/dataform" className="nav-link">
+        <Link to="/dataform" className="nav-link hoverable">
           Bird Data Form
         </Link>
       </nav>
+      </header>
+      <div className="birds-container">
       <h1>All Birds</h1>
       <input
+        id="searchBird"
         type="text"
         placeholder="Search birds..."
         value={searchTerm}
@@ -60,7 +64,7 @@ const AllBirds = () => {
       />
       {filteredBirds.map((bird) => (
         <div key={bird.id} className="bird-card">
-          <Link to={`/bird/${bird.name}`}>
+          <Link to={`/bird/${bird.name}`} className="nav-link body-link">
             <strong>{bird.name}</strong>
           </Link>
           <p>{bird.scientificName}</p>
@@ -75,6 +79,7 @@ const AllBirds = () => {
           </button>
         </div>
       ))}
+    </div>
     </div>
   );
 };

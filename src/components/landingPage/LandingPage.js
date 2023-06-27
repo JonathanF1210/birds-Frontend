@@ -4,6 +4,7 @@ import "./landingPage.css";
 
 const LandingPage = () => {
   const [bird, setBird] = useState(null);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     const birdNames = [
@@ -11,6 +12,7 @@ const LandingPage = () => {
       "Great Horned Owl",
       "Blue Jay",
       "Painted Bunting",
+      "American Crow"
     ];
 
     const fetchBirdData = async () => {
@@ -39,18 +41,23 @@ const LandingPage = () => {
   }
 
   // Divide the bird array into two halves
-  const halfLength = Math.ceil(bird.length / 2);
+  const halfLength = Math.ceil(bird.length / 3);
   const firstHalf = bird.slice(0, halfLength);
   const secondHalf = bird.slice(halfLength);
+
+  const handleButtonClick = () => {
+    window.location.href = `/bird/${searchTerm}`;
+  }
+
 
   return (
     <div className="landing-page">
       <nav className="navPages">
-        <Link to="/allBirds" className="nav-link">All Birds</Link>
+        <Link to="/allBirds" className="nav-link hoverable">All Birds</Link>
 
-        <Link to="/birdlist" className="nav-link">Watch List</Link>
+        <Link to="/birdlist" className="nav-link hoverable">Watch List</Link>
 
-        <Link to="/dataform" className="nav-link">Bird Data Form</Link>
+        <Link to="/dataform" className="nav-link hoverable">Bird Data Form</Link>
       </nav>
       <div className="container">
         <h1>Welcome to Bird View</h1>
@@ -71,39 +78,58 @@ const LandingPage = () => {
           <div className="bird bird--four"></div>
         </div>
       </div>
-      <nav className="nav-container">
-        <Link to="/allBirds" className="toAllBirds-button nav-link">
-          Check out our full list of birds
-        </Link>
-        <Link to="/BirdList" className="toBirdList-button nav-link">
-          Check out your personal bird watch list
-        </Link>
-      </nav>
+      
+      <p>Bird View is a site where you can find information on species of birds
+        and create your own watch list.
+      </p>
+      <p>To get started, search or click on a bird below and start adding birds to your watch list</p>
+      <input
+        id="searchBird-ladning"
+        type="text"
+        placeholder="Search birds..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
+      <button
+            id="searchBird-button"
+            onClick={handleButtonClick}
+          >Search</button>
 
       <div className="section-container">
         <div className="birdList-section">
           {firstHalf.map((bird) => (
+            <Link to={`/bird/${bird.name}`} className="nav-link body-link">
             <div key={bird.id} className="bird-card">
-              <Link to={`/bird/${bird.name}`} className="nav-link">
                 <strong>{bird.name}</strong>
-              </Link>
+              
               <p>{bird.scientificName}</p>
               <img src={bird.images} alt={bird.name} />
             </div>
+            </Link>
           ))}
         </div>
         <div className="allBirds-section">
           {secondHalf.map((bird) => (
+            <Link to={`/bird/${bird.name}`} className="nav-link body-link">
             <div key={bird.id} className="bird-card">
-              <Link to={`/bird/${bird.name}`} className="nav-link">
                 <strong>{bird.name}</strong>
-              </Link>
               <p>{bird.scientificName}</p>
               <img src={bird.images} alt={bird.name} />
             </div>
+            </Link>
           ))}
         </div>
       </div>
+      <Link to="/allBirds" className="nav-link body-link hoverable">
+      <h2>Check out a list of all of our birds</h2>
+      </Link>
+      <footer className="footer-container">
+        <div>
+          <p>View the beauty of birds with Bird View</p>
+        </div>
+        <div>
+        </div>
+      </footer>
     </div>
   );
 };

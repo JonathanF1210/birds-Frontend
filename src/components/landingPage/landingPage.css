@@ -6,6 +6,11 @@
   box-sizing: border-box;
 }
 
+body{
+  background-color: #e7ce9d;
+  color: #271600;
+}
+
 h1 {
   font-family: "Arima Madurai", cursive;
   color: black;
@@ -14,6 +19,10 @@ h1 {
   text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.6);
   position: relative;
   z-index: 3;
+}
+
+p{
+  font-size: 25px;
 }
 
 .container {
@@ -193,10 +202,9 @@ h1 {
 
 .section-container {
   display: flex;
-  outline: 5px solid black;
-  margin-top: 50px;
+  margin-top: 20px;
   width: 100%;
-  height: 80%;
+  height: 100%;
 }
 
 .birdList-section {
@@ -204,6 +212,7 @@ h1 {
   flex-direction: column;
   justify-content: space-around;
   width: 50%;
+  height: 100%;
 }
 
 .allBirds-section {
@@ -211,36 +220,117 @@ h1 {
   flex-direction: column;
   justify-content: space-between;
   width: 50%;
+  height: 100%;
 }
 
 .bird-card {
   margin-bottom: 20px;
+  border: #271600 solid 5px;
+  border-radius: 5px;
+  margin: 10px;
+  padding-top: 10px;
 }
 
 .bird-card img {
-  width: 60%;
+  width: 95%;
   height: auto;
   margin-bottom: 10px;
+  border-radius: 5px;
 }
 
 .bird-card a {
   display: block;
   font-weight: bold;
   margin-bottom: 5px;
+  color:#271600;
 }
 
 .bird-card p {
   margin-bottom: 10px;
+  color:#271600;
 }
 
 .navPages{
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
-	margin: 10px;
+	padding: 10px;
+  background-color: #271600;
 }
 
 .nav-link {
-	color: black; /* or any color you prefer */
+	color: rgb(250, 244, 231);
 	text-decoration: none;
+  display:inline-block;
+    backface-visibility: hidden;
+    vertical-align: middle;
+    position:relative;
+    box-shadow: 0 0 1px rgba(0,0,0,0);
+    transform: translateZ(0);
+    transition-duration: .3s;
+    transition-property:transform;
+  }
+
+  .body-link{
+    color:#271600;
+  }
+  
+  .nav-link:before{
+    position:absolute;
+    pointer-events: none;
+    z-index:-1;
+    content: '';
+    top: 100%;
+    left: 5%;
+    height:10px;
+    width:90%;
+    opacity:0;
+    background: -webkit-radial-gradient(center, ellipse, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 80%);
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 80%);
+    /* W3C */
+    transition-duration: 0.3s;
+    transition-property: transform, opacity;
+  }
+  
+  .nav-link:hover, .nav-link:active, .nav-link:focus{
+    transform: translateY(-5px);
+  }
+  .nav-link:hover:before, .nav-link:active:before, .nav-link:focus:before{
+    opacity: 1;
+    transform: translateY(-5px);
+  }
+
+  #searchBird-button{
+    height: 30px;
+  }
+
+  #searchBird-ladning{
+    height: 30px;
+    width: 800px;
+    margin: 30px 5px 0px auto;
+  }
+
+  h2{
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+  }
+
+  footer{
+    display: flex;
+    flex-direction: row;
+    margin-top: 100px;
+    background-color: #1d1101;
+    height: 300px;
+    padding: 100px;
+  }
+
+  footer p{
+    color: wheat;
+    font-size: 20px;
+  }
+
+  footer div{
+    justify-content: center;
+    margin: 20px;
   }

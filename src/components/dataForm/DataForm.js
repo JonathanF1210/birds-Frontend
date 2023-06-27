@@ -40,8 +40,8 @@ const CreateBirdForm = () => {
           Watch List
         </Link>
 
-        <Link to="/dataform" className="nav-link">
-          Bird Data Form
+        <Link to="/" className="nav-link">
+          Home
         </Link>
       </nav>
       <h1>Bird Data Form</h1>
